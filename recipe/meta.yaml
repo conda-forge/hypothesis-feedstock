@@ -1,5 +1,5 @@
-{% set version = "3.4.2" %}
-{% set md5 = "b180f47bdbebdbbbfe4a6d2d7f95c640" %}
+{% set version = "3.6.1" %}
+{% set md5 = "ec965f1645a6fd9cb443040fdabaffcd" %}
 {% set pkgname = "hypothesis" %}
 
 package:
