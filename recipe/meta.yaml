@@ -1,5 +1,5 @@
-{% set version = "3.6.1" %}
-{% set sha = "d4a0aa584ee4654819b8bfc8b5791669ad229eb1db949716543d7c31219cb35b" %}
+{% set version = "3.11.0" %}
+{% set sha = "a3a1cdf112cab352c08b4e440111880cc49c4e4c862c910cd5ae726a4f26241a" %}
 {% set pkgname = "hypothesis" %}
 
 package:
@@ -43,3 +43,4 @@ extra:
   recipe-maintainers:
     - ericmjl
     - jochym
+    - tadeu
