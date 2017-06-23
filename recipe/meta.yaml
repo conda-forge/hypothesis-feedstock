@@ -1,5 +1,5 @@
-{% set version = "3.11.0" %}
-{% set sha = "a3a1cdf112cab352c08b4e440111880cc49c4e4c862c910cd5ae726a4f26241a" %}
+{% set version = "3.11.6" %}
+{% set sha = "54262436f4921107c5c5a06c80789c05f3a619d798208273d5779559e264e0d5" %}
 {% set pkgname = "hypothesis" %}
 
 package:
