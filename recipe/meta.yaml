@@ -29,7 +29,7 @@ test:
   requires:
     - pytest
   source_files:
-    - tests
+    - tests/*
   imports:
     - hypothesis
     - hypothesis.extra
