@@ -34,7 +34,7 @@ test:
     - hypothesis.internal
     - hypothesis.internal.conjecture
       #    - hypothesis.searchstrategy
-    - hypothesis.tools
+      #    - hypothesis.tools
     - hypothesis.utils
     - hypothesis.vendor
   commands:
