@@ -35,7 +35,7 @@ test:
     - hypothesis.internal.conjecture
       #    - hypothesis.searchstrategy
       #    - hypothesis.tools
-    - hypothesis.utils
+      #    - hypothesis.utils
     - hypothesis.vendor
   commands:
     - python -m pytest tests/cover
