@@ -19,11 +19,15 @@ requirements:
   build:
     - python
     - setuptools
+    - attr
+    - coverage
   run:
     - python
     - enum34  # [py<34]
 
 test:
+  requires:
+    - pytest
   imports:
     - hypothesis
     - hypothesis.extra
@@ -33,6 +37,8 @@ test:
     - hypothesis.tools
     - hypothesis.utils
     - hypothesis.vendor
+  commands:
+    - python -m pytest tests/cover
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
