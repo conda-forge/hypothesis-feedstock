@@ -33,7 +33,7 @@ test:
     - hypothesis.extra
     - hypothesis.internal
     - hypothesis.internal.conjecture
-    - hypothesis.searchstrategy
+      #    - hypothesis.searchstrategy
     - hypothesis.tools
     - hypothesis.utils
     - hypothesis.vendor
