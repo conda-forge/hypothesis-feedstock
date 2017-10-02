@@ -19,7 +19,7 @@ requirements:
   build:
     - python
     - setuptools
-    - attr
+    - attrs
     - coverage
   run:
     - python
