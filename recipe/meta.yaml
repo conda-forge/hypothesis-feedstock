@@ -26,8 +26,8 @@ requirements:
     - enum34  # [py<34]
 
 test:
-  source_files:
-    - {{ environ['SRC_DIR'] }}/tests
+#  source_files:
+#    - {{ environ['SRC_DIR'] }}/tests
   requires:
     - pytest
   imports:
@@ -40,6 +40,7 @@ test:
       #    - hypothesis.utils
       #    - hypothesis.vendor
   commands:
+    - ls {{ environ['SRC_DIR'] }}
     - python -m pytest tests/cover
 
 about:
