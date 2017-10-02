@@ -38,10 +38,9 @@ test:
       #    - hypothesis.utils
       #    - hypothesis.vendor
   commands:
+    - cd {{ environ['SRC_DIR'] }}
     - ls
     - python -m pytest tests/cover
-  source_files:
-    - {{ environ['SRC_DIR'] }}/tests
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
