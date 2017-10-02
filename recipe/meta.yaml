@@ -28,8 +28,8 @@ requirements:
 test:
   requires:
     - pytest
-  source_files:
-    - tests/*
+      #source_files:
+      #- tests/*
   imports:
     - hypothesis
     - hypothesis.extra
@@ -40,6 +40,8 @@ test:
       #    - hypothesis.utils
       #    - hypothesis.vendor
   commands:
+    - pwd
+    - ls
     - python -m pytest tests/cover
 
 about:
