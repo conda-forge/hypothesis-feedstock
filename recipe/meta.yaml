@@ -26,8 +26,8 @@ requirements:
     - enum34  # [py<34]
 
 test:
-  requires:
-    - pytest
+        #  requires:
+        #    - pytest
   imports:
     - hypothesis
     - hypothesis.extra
