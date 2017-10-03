@@ -27,7 +27,10 @@ requirements:
 
 test:
   source_files:
-    - {{ environ['SRC_DIR'] }}
+    - tests/*.py
+    - tests/*/*.py
+    - ../tests/*.py
+    - ../tests/*/*.py
   requires:
     - pytest
   imports:
