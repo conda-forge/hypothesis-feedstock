@@ -27,8 +27,7 @@ requirements:
 
 test:
   source_files:
-    - tests/*.py
-    - tests/*/*.py
+    - *
     - ../tests/*.py
     - ../tests/*/*.py
   requires:
