@@ -40,7 +40,7 @@ test:
       #    - hypothesis.utils
       #    - hypothesis.vendor
   commands:
-    - ls src
+    - ls -Rl src
     - python -m pytest tests/cover
 
 about:
