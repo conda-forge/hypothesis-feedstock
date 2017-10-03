@@ -27,8 +27,6 @@ requirements:
 
 test:
   source_files:
-    - tests/*.py
-    - tests/*/*.py
     - {{ environ['SRC_DIR'] }}/tests/*.py
     - {{ environ['SRC_DIR'] }}/tests/*/*.py
   requires:
