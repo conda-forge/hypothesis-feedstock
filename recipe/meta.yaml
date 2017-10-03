@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  skip: True  # [py<34]
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -29,10 +30,9 @@ test:
         #  requires:
         #    - pytest
   imports:
+    - hypothesis
     - hypothesis.strategies
-      #    - hypothesis.extra
-      #    - hypothesis.internal
-      #    - hypothesis.internal.conjecture
+    - hypothesis.extra
       #    - hypothesis.searchstrategy
       #    - hypothesis.tools
       #    - hypothesis.utils
