@@ -31,7 +31,6 @@ test:
         #    - pytest
   imports:
     - hypothesis
-    - hypothesis.strategies
     - hypothesis.extra
       #    - hypothesis.searchstrategy
       #    - hypothesis.tools
