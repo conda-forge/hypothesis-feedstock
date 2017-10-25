@@ -12,10 +12,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [py<34]
-  number: 0
+  noarch: python
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
-
+  
 requirements:
   build:
     - python
@@ -24,22 +24,24 @@ requirements:
     - coverage
   run:
     - python
+    - attrs
+    - coverage
     - enum34  # [py<34]
-
+    
 test:
-        #  requires:
-        #    - pytest
   imports:
     - hypothesis
     - hypothesis.extra
-      #    - hypothesis.searchstrategy
-      #    - hypothesis.tools
-      #    - hypothesis.utils
-      #    - hypothesis.vendor
-      #      commands:
-      #        - git clone https://github.com/HypothesisWorks/hypothesis-python.git git_src
-      #        - cd git_src
-      #        - python -m pytest tests/cover
+    - hypothesis.internal
+    - hypothesis.internal.conjecture
+    - hypothesis.searchstrategy
+    - hypothesis.tools
+    - hypothesis.utils
+    - hypothesis.vendor
+  commands:
+    - git clone --depth 1 https://github.com/HypothesisWorks/hypothesis-python.git git_src
+    - cd git_src
+    - python -m pytest tests/cover
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
