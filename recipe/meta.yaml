@@ -1,20 +1,18 @@
-{% set pkgname = "hypothesis" %}
 {% set version = "3.33.0" %}
-{% set sha256 = "fd1624a8f0d39456423f1c3041b996dccb292efc81e30366407304960253df12" %}
 
 package:
-  name: {{ pkgname }}
-  version: {{ version }}
+  name: hypothesis
+  version: {{version}}
 
 source:
-  fn: {{ pkgname }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ pkgname[0] }}/{{ pkgname }}/{{ pkgname }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  fn: hypothesis-{{version}}.tar.gz
+  url: https://pypi.io/packages/source/h/hypothesis/hypothesis-{{version}}.tar.gz
+  md5: cb0ee54fa6b16d5b6c95b7f096f15667
 
 build:
   noarch: python
   number: 1
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python setup.py install --optimize=1 --single-version-externally-managed --record record.txt
   
 requirements:
   build:
@@ -24,6 +22,7 @@ requirements:
     - coverage
   run:
     - python
+    - enum34  # [py<34]
     - attrs
     - coverage
     
