@@ -26,6 +26,7 @@ requirements:
     - python
     - attrs
     - coverage
+    - enum34  # [py<34]
     
 test:
   imports:
