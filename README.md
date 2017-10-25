@@ -14,9 +14,7 @@ Summary: A library for property based testing
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/hypothesis-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/hypothesis-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/hypothesis-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/hypothesis-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/hypothesis-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/hypothesis-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/hypothesis-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/hypothesis-feedstock)
 
 Current release info
 ====================
