@@ -29,7 +29,9 @@ requirements:
 
 test:
   source_files:
-    - ./tests
+    - scripts/*.sh
+    - scripts/*.py
+    - tests/*
   requires:
     - pytest
   imports:
