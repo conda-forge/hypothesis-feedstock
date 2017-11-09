@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.33.0" %}
-{% set sha256 = "fd1624a8f0d39456423f1c3041b996dccb292efc81e30366407304960253df12" %}
+{% set version = "3.36.0" %}
+{% set sha256 = "736347bdd67f0ff8a881658b185e25d444484e3f300f37ae1e80d703e6d86a69" %}
 
 package:
   name: {{ pkgname }}
@@ -24,15 +24,17 @@ requirements:
     - coverage
   run:
     - python
+    - attrs
     - enum34  # [py<34]
 
 test:
-        #  requires:
-        #    - pytest
+  requires:
+    - pytest
+    - coverage
   imports:
     - hypothesis
     - hypothesis.extra
-      #    - hypothesis.searchstrategy
+    - hypothesis.searchstrategy
       #    - hypothesis.tools
       #    - hypothesis.utils
       #    - hypothesis.vendor
