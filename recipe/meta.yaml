@@ -28,6 +28,8 @@ requirements:
     - enum34  # [py<34]
 
 test:
+  source_files:
+    - tests
   requires:
     - pytest
   imports:
@@ -38,9 +40,10 @@ test:
       #    - hypothesis.utils
       #    - hypothesis.vendor
   commands:
-    - git clone https://github.com/HypothesisWorks/hypothesis-python.git git_src
-    - cd git_src
-    - python -m pytest tests/cover
+    - python -m pytest -n 0 tests/cover
+    - python -m pytest -n 0 tests/datetime
+    - python -m pytest -n 0 tests/fakefactory
+    - python -m pytest -n 0 tests/pytest -p pytester --runpytest subprocess
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
