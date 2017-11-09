@@ -31,7 +31,6 @@ requirements:
 test:
   requires:
     - pytest
-    - coverage
   imports:
     - hypothesis
     - hypothesis.extra
@@ -39,10 +38,10 @@ test:
       #    - hypothesis.tools
       #    - hypothesis.utils
       #    - hypothesis.vendor
-      #      commands:
-      #        - git clone https://github.com/HypothesisWorks/hypothesis-python.git git_src
-      #        - cd git_src
-      #        - python -m pytest tests/cover
+   commands:
+     - git clone https://github.com/HypothesisWorks/hypothesis-python.git git_src
+     - cd git_src
+     - python -m pytest tests/cover
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
