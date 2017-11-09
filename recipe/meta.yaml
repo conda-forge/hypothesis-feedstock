@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python setup.py install --single-version-externally-managed --record record.txt && cat record.txt
 
 requirements:
   build:
@@ -28,10 +28,10 @@ requirements:
     - enum34  # [py<34]
 
 test:
-  source_files:
-    - scripts/*.sh
-    - scripts/*.py
-    - tests/*
+        #  source_files:
+        #    - scripts/*.sh
+        #    - scripts/*.py
+        #    - tests/*
   requires:
     - pytest
   imports:
