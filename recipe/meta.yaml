@@ -12,7 +12,6 @@ source:
   sha256: {{ sha256 }}
 
 build:
-        # skip: True  # [py<34]
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -34,14 +33,14 @@ test:
   imports:
     - hypothesis
     - hypothesis.extra
-    - hypothesis.searchstrategy
+      #    - hypothesis.searchstrategy
       #    - hypothesis.tools
       #    - hypothesis.utils
       #    - hypothesis.vendor
-   commands:
-     - git clone https://github.com/HypothesisWorks/hypothesis-python.git git_src
-     - cd git_src
-     - python -m pytest tests/cover
+  commands:
+    - git clone https://github.com/HypothesisWorks/hypothesis-python.git git_src
+    - cd git_src
+    - python -m pytest tests/cover
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
