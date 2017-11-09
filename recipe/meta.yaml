@@ -29,7 +29,7 @@ requirements:
 
 test:
   source_files:
-    - tests
+    - ./tests
   requires:
     - pytest
   imports:
