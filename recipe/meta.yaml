@@ -30,21 +30,26 @@ requirements:
 test:
   requires:
     - pytest
+    - numpy
+    - pandas
+    - pytz
+    - faker
   imports:
     - hypothesis
     - hypothesis.extra
-    - hypothesis.searchstrategy
-#    - hypothesis.tools
-    - hypothesis.utils
-    - hypothesis.vendor
+    - hypothesis.strategies
+    - hypothesis.stateful
   commands:
     - git clone https://github.com/HypothesisWorks/hypothesis-python.git src
     - cd src
-    - bash scripts/basic-test.sh
-#    - python -m pytest tests/cover
-#    - python -m pytest tests/datetime
-#    - python -m pytest tests/fakefactory
-#    - python -m pytest tests/pytest -p pytester --runpytest subprocess
+    - python -m pytest tests/cover
+    - python -m pytest tests/datetime
+    - python -m pytest tests/fakefactory
+    - python -m pytest tests/numpy
+    - python -m pytest tests/pandas
+    - python -m pytest tests/py2  # [py2k]
+    - python -m pytest tests/py3  # [py3k]
+    - python -m pytest tests/pytest -p pytester --runpytest subprocess
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
