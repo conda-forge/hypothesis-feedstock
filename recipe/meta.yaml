@@ -30,7 +30,6 @@ requirements:
 
 test:
   requires:
-    - pytest
     - pytest-xdist
     - numpy
     - pandas
