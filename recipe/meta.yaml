@@ -13,14 +13,14 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt && cat record.txt
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - attrs
-    - coverage
+#    - attrs
+#    - coverage
   run:
     - python
     - attrs
@@ -28,25 +28,23 @@ requirements:
     - enum34  # [py<34]
 
 test:
-        #  source_files:
-        #    - scripts/*.sh
-        #    - scripts/*.py
-        #    - tests/*
   requires:
     - pytest
   imports:
     - hypothesis
     - hypothesis.extra
-      #    - hypothesis.searchstrategy
-      #    - hypothesis.tools
-      #    - hypothesis.utils
-      #    - hypothesis.vendor
+    - hypothesis.searchstrategy
+#    - hypothesis.tools
+    - hypothesis.utils
+    - hypothesis.vendor
   commands:
-    - pwd ; ls -l
-    - python -m pytest -n 0 tests/cover
-    - python -m pytest -n 0 tests/datetime
-    - python -m pytest -n 0 tests/fakefactory
-    - python -m pytest -n 0 tests/pytest -p pytester --runpytest subprocess
+    - git clone https://github.com/HypothesisWorks/hypothesis-python.git src
+    - cd src
+    - bash scripts/basic-test.sh
+#    - python -m pytest tests/cover
+#    - python -m pytest tests/datetime
+#    - python -m pytest tests/fakefactory
+#    - python -m pytest tests/pytest -p pytester --runpytest subprocess
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
