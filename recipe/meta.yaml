@@ -37,6 +37,7 @@ test:
     - faker
     - mock
     - flaky
+    - ipaddress  # [py2k]
   imports:
     - hypothesis
     - hypothesis.extra
