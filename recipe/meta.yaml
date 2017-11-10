@@ -35,6 +35,8 @@ test:
     - pandas
     - pytz
     - faker
+    - mock
+    - flaky
   imports:
     - hypothesis
     - hypothesis.extra
