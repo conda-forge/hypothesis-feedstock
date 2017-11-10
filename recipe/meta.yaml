@@ -46,14 +46,14 @@ test:
   commands:
     - git clone https://github.com/HypothesisWorks/hypothesis-python.git src
     - cd src
-    - python -m pytest tests/cover
-    - python -m pytest tests/datetime
-    - python -m pytest tests/fakefactory
-    - python -m pytest tests/numpy
-    - python -m pytest tests/pandas
-    - python -m pytest tests/py2  # [py2k]
-    - python -m pytest tests/py3  # [py3k]
-    - python -m pytest tests/pytest -p pytester --runpytest subprocess
+    - python -m pytest -n 0 tests/cover
+    - python -m pytest -n 0 tests/datetime
+    - python -m pytest -n 0 tests/fakefactory
+    - python -m pytest -n 0 tests/numpy
+    - python -m pytest -n 0 tests/pandas
+    - python -m pytest -n 0 tests/py2  # [py2k]
+    - python -m pytest -n 0 tests/py3  # [py3k]
+    - python -m pytest -n 0 tests/pytest -p pytester --runpytest subprocess
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
