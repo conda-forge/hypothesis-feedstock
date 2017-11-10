@@ -27,6 +27,9 @@ requirements:
     - coverage
     - enum34  # [py<34]
 
+{% set pytestcmd = "python -m pytest " %}  # [not py35]
+{% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
+
 test:
   requires:
     - pytest
@@ -46,14 +49,14 @@ test:
   commands:
     - git clone https://github.com/HypothesisWorks/hypothesis-python.git src
     - cd src
-    - python -m pytest -n 0 tests/cover
-    - python -m pytest -n 0 tests/datetime
-    - python -m pytest -n 0 tests/fakefactory
-    - python -m pytest -n 0 tests/numpy
-    - python -m pytest -n 0 tests/pandas
-    - python -m pytest -n 0 tests/py2  # [py2k]
-    - python -m pytest -n 0 tests/py3  # [py3k]
-    - python -m pytest -n 0 tests/pytest -p pytester --runpytest subprocess
+    - {{ pytestcmd }} tests/cover
+    - {{ pytestcmd }} tests/datetime
+    - {{ pytestcmd }} tests/fakefactory
+    - {{ pytestcmd }} tests/numpy
+    - {{ pytestcmd }} tests/pandas
+    - {{ pytestcmd }} tests/py2  # [py2k]
+    - {{ pytestcmd }} tests/py3  # [py3k]
+    - {{ pytestcmd }} tests/pytest -p pytester --runpytest subprocess
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
