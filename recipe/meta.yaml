@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.36.0" %}
-{% set sha256 = "736347bdd67f0ff8a881658b185e25d444484e3f300f37ae1e80d703e6d86a69" %}
+{% set version = "3.36.1" %}
+{% set sha256 = "dfd3ae2f26541dc6974bd0f9a0899f949062a656c95dac36c4f83b998d8a3741" %}
 
 package:
   name: {{ pkgname }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -25,7 +25,7 @@ requirements:
     - coverage
     - enum34  # [py<34]
 
-{% set pytestcmd = "python -m pytest " %}  # [not py35]
+{% set pytestcmd = "python -m pytest " %}  
 {% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
 
 test:
