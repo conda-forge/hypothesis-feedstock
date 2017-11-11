@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.33.0" %}
-{% set sha256 = "fd1624a8f0d39456423f1c3041b996dccb292efc81e30366407304960253df12" %}
+{% set version = "3.36.0" %}
+{% set sha256 = "736347bdd67f0ff8a881658b185e25d444484e3f300f37ae1e80d703e6d86a69" %}
 
 package:
   name: {{ pkgname }}
@@ -12,7 +12,6 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [py<34]
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -20,26 +19,41 @@ requirements:
   build:
     - python
     - setuptools
-    - attrs
-    - coverage
   run:
     - python
+    - attrs
+    - coverage
     - enum34  # [py<34]
 
+{% set pytestcmd = "python -m pytest " %}  # [not py35]
+{% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
+
 test:
-        #  requires:
-        #    - pytest
+  requires:
+    - pytest-xdist
+    - numpy
+    - pandas
+    - pytz
+    - faker
+    - mock
+    - flaky
+    - ipaddress  # [py2k]
   imports:
     - hypothesis
     - hypothesis.extra
-      #    - hypothesis.searchstrategy
-      #    - hypothesis.tools
-      #    - hypothesis.utils
-      #    - hypothesis.vendor
-      #      commands:
-      #        - git clone https://github.com/HypothesisWorks/hypothesis-python.git git_src
-      #        - cd git_src
-      #        - python -m pytest tests/cover
+    - hypothesis.strategies
+    - hypothesis.stateful
+  commands:
+    - git clone https://github.com/HypothesisWorks/hypothesis-python.git src
+    - cd src
+    - {{ pytestcmd }} tests/cover
+    - {{ pytestcmd }} tests/datetime
+    - {{ pytestcmd }} tests/fakefactory
+    - {{ pytestcmd }} tests/numpy
+    - {{ pytestcmd }} tests/pandas
+    - {{ pytestcmd }} tests/py2  # [py2k]
+    - {{ pytestcmd }} tests/py3  # [py3k]
+    - {{ pytestcmd }} tests/pytest -p pytester --runpytest subprocess
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
