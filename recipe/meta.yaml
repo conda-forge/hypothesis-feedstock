@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.50.2" %}
-{% set sha256 = "74d5a87139e6f101cb1245fbece4ab0d2c58147362b0b0d713148492a1221e00" %}
+{% set version = "3.50.3" %}
+{% set sha256 = "a0a49d7a48a606770abfc00b2b3b566d6efeedc8819f070a89ec615a360319ef" %}
 
 package:
   name: {{ pkgname }}
@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  noarch: python
   number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -23,10 +24,9 @@ requirements:
     - python
     - attrs
     - coverage
-    - enum34  # [py<34]
 
 {% set pytestcmd = "python -m pytest " %}  
-{% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
+#{% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
 
 test:
   requires:
@@ -37,7 +37,7 @@ test:
     - faker
     - mock
     - flaky
-    - ipaddress  # [py2k]
+    - ipaddress
   imports:
     - hypothesis
     - hypothesis.extra
@@ -51,8 +51,8 @@ test:
     - {{ pytestcmd }} tests/fakefactory
     - {{ pytestcmd }} tests/numpy
     - {{ pytestcmd }} tests/pandas
-    - {{ pytestcmd }} tests/py2  # [py2k]
-    - {{ pytestcmd }} tests/py3  # [py3k]
+    - {{ pytestcmd }} tests/py2
+    - {{ pytestcmd }} tests/py3
     - {{ pytestcmd }} tests/pytest -p pytester --runpytest subprocess
 
 about:
