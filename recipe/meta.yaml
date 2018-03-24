@@ -24,10 +24,9 @@ requirements:
     - python
     - attrs
     - coverage
-    - enum34  # [py<34]
 
 {% set pytestcmd = "python -m pytest " %}  
-{% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
+#{% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
 
 test:
   requires:
@@ -38,7 +37,7 @@ test:
     - faker
     - mock
     - flaky
-    - ipaddress  # [py2k]
+    - ipaddress
   imports:
     - hypothesis
     - hypothesis.extra
@@ -52,8 +51,8 @@ test:
     - {{ pytestcmd }} tests/fakefactory
     - {{ pytestcmd }} tests/numpy
     - {{ pytestcmd }} tests/pandas
-    - {{ pytestcmd }} tests/py2  # [py2k]
-    - {{ pytestcmd }} tests/py3  # [py3k]
+    - {{ pytestcmd }} tests/py2
+    - {{ pytestcmd }} tests/py3
     - {{ pytestcmd }} tests/pytest -p pytester --runpytest subprocess
 
 about:
