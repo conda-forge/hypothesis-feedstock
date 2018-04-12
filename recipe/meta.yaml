@@ -44,8 +44,8 @@ test:
     - hypothesis.strategies
     - hypothesis.stateful
   commands:
-    - git clone https://github.com/HypothesisWorks/hypothesis-python.git src
-    - cd src
+    - git clone https://github.com/HypothesisWorks/hypothesis.git src
+    - cd src/hypothesis-python
     - {{ pytestcmd }} tests/cover
     - {{ pytestcmd }} tests/datetime
     - {{ pytestcmd }} tests/fakefactory
