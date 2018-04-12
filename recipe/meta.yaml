@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.55.0" %}
-{% set sha256 = "ffa1fb316f5ce73e46827b687116149bca8ea46d414ade8348881800e6d873aa" %}
+{% set version = "3.55.3" %}
+{% set sha256 = "9a313e92793e30c23269d084d655cf4997a035d6ad6576d92aeb5a53d2aee8d8" %}
 
 package:
   name: {{ pkgname }}
@@ -44,8 +44,8 @@ test:
     - hypothesis.strategies
     - hypothesis.stateful
   commands:
-    - git clone https://github.com/HypothesisWorks/hypothesis-python.git src
-    - cd src
+    - git clone https://github.com/HypothesisWorks/hypothesis.git src
+    - cd src/hypothesis-python
     - {{ pytestcmd }} tests/cover
     - {{ pytestcmd }} tests/datetime
     - {{ pytestcmd }} tests/fakefactory
