@@ -14,14 +14,16 @@ Summary: A library for property based testing
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/hypothesis-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/hypothesis-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/hypothesis-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/hypothesis-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/hypothesis-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/hypothesis-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/hypothesis-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/hypothesis-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/hypothesis-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/hypothesis-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/hypothesis-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/hypothesis-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/hypothesis/badges/version.svg)](https://anaconda.org/conda-forge/hypothesis)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/hypothesis/badges/downloads.svg)](https://anaconda.org/conda-forge/hypothesis)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-hypothesis-green.svg)](https://anaconda.org/conda-forge/hypothesis) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis) |
 
 Installing hypothesis
 =====================
