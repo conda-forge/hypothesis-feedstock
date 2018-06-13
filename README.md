@@ -20,10 +20,10 @@ Current build status
 
 Current release info
 ====================
-[![Conda Recipe](https://img.shields.io/badge/recipe-hypothesis-green.svg)](https://anaconda.org/conda-forge/hypothesis)
-[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis)
-[![Conda Version](https://img.shields.io/conda/vn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis)
-[![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-hypothesis-green.svg)](https://anaconda.org/conda-forge/hypothesis) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/hypothesis.svg)](https://anaconda.org/conda-forge/hypothesis) |
 
 Installing hypothesis
 =====================
