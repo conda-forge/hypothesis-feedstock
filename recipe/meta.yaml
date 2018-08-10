@@ -24,7 +24,6 @@ requirements:
     - python
     - attrs
     - coverage
-    - enum34  # [py<34]
 
 {% set pytestcmd = "python -m pytest " %}  
 {% set pytestcmd = "python -m pytest -n 0 " %}  # [py35]
