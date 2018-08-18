@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.68.0" %}
-{% set sha256 = "208a7ad29e3298c54e1962d4a940724e90f0c988e3df950ddf10c8f08fde85c3" %}
+{% set version = "3.68.1" %}
+{% set sha256 = "86192514059e32797a9439ae60e8b12968647dac43d096d9742ed06711e3cc06" %}
 
 package:
   name: {{ pkgname }}
@@ -63,6 +63,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - ericmjl
-    - jochym
-    - tadeu
+          - ericmjl
+          - jochym
+          - tadeu
