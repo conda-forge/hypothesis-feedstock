@@ -62,4 +62,7 @@ about:
   summary: 'A library for property based testing'
 
 extra:
-  recipe-maintainers: ericmjl jochym tadeu 
+  recipe-maintainers:
+          - ericmjl
+          - jochym
+          - tadeu
