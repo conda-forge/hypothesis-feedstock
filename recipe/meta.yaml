@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.64.2" %}
-{% set sha256 = "f23c02a6b7ea74df997caccda6966b6bbac6953ad6ed6d01e164ca5b79ec3ff8" %}
+{% set version = "3.68.1" %}
+{% set sha256 = "86192514059e32797a9439ae60e8b12968647dac43d096d9742ed06711e3cc06" %}
 
 package:
   name: {{ pkgname }}
@@ -13,11 +13,12 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .  --verbose
 
 requirements:
   build:
     - python
+    - pip
     - setuptools
   run:
     - python
