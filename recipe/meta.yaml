@@ -31,7 +31,7 @@ requirements:
 
 test:
   requires:
-    - pytest-xdist
+    - pytest >= 3.7.3
     - numpy
     - pandas
     - pytz
