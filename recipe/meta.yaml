@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.69.2" %}
-{% set sha256 = "d9ebdad11ee9a948d218ca7aa237a6ee3a7659f32ed1389010b13f22be2e43a8" %}
+{% set version = "3.69.11" %}
+{% set sha256 = "f8cf821ad619bbd8d497feb3e437448e32261b76555aceedefee234c274b8db6" %}
 
 package:
   name: {{ pkgname }}
@@ -31,6 +31,7 @@ requirements:
 
 test:
   requires:
+    - pytest >=3.1, !=3.7.3
     - pytest-xdist
     - numpy
     - pandas
