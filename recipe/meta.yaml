@@ -1,6 +1,6 @@
 {% set pkgname = "hypothesis" %}
-{% set version = "3.69.12" %}
-{% set sha256 = "b304be9a43125936ab56af81ad014bb5b8ad19526f49d6919bbd344e924f0f81" %}
+{% set version = "3.70.3" %}
+{% set sha256 = "2b35192cd3562e478715fc604ba139587cf220c1337b94b27abcbaab64d050e7" %}
 
 package:
   name: {{ pkgname }}
