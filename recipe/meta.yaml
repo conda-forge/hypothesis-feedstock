@@ -9,7 +9,7 @@ source:
   sha256: a6eca138c03e55bfee3090dbedf9f98d3985b0ea8cd7e0e35e22899071f24768
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -18,7 +18,7 @@ requirements:
     - pip
   run:
     - python
-    - attrs >=16.0.0
+    - attrs >=19.2.0
     - enum34  # [py<34]
 
 test:
