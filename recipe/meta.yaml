@@ -1,4 +1,4 @@
-{% set version = "4.44.1" %}
+{% set version = "4.44.2" %}
 
 package:
   name: hypothesis
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hypothesis/hypothesis-{{ version }}.tar.gz
-  sha256: 5caf0d4b52cf797cfcb6bcf7fc633dd97b23beb9c07a3c90fffe444e4ebb3de3
+  sha256: 0950e663cef6fea90642996a44aa402978657dea47c8a4fb47caae335379668d
 
 build:
   number: 0
