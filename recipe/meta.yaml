@@ -20,13 +20,21 @@ requirements:
     - python
     - attrs >=19.2.0
     - enum34  # [py<34]
+    - sortedcontainers >=2.1.0,<3.0.0
 
 test:
   imports:
     - hypothesis
     - hypothesis.extra
+    - hypothesis.extra.django
+    - hypothesis.extra.pandas
+    - hypothesis.internal
+    - hypothesis.internal.conjecture
+    - hypothesis.internal.conjecture.shrinking
     - hypothesis.strategies
-    - hypothesis.stateful
+    - hypothesis.strategies._internal
+    - hypothesis.utils
+    - hypothesis.vendor
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
