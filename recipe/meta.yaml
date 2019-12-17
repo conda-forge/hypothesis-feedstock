@@ -1,4 +1,4 @@
-{% set version = "4.54.2" %}
+{% set version = "4.55.0" %}
 
 package:
   name: hypothesis
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hypothesis/hypothesis-{{ version }}.tar.gz
-  sha256: 7bdfb76a52e90f5367306cfe955dfdab28f9edbe5555296904cee686704babbf
+  sha256: 1a8bde9f8f2d782e7b927fe5da8d432fd3f06c71984c2da7e828e0150932712e
 
 build:
   number: 0
@@ -20,13 +20,24 @@ requirements:
     - python
     - attrs >=19.2.0
     - enum34  # [py<34]
+    - sortedcontainers >=2.1.0,<3.0.0
 
 test:
+  requires:
+    - django
+    - pandas
   imports:
     - hypothesis
     - hypothesis.extra
+    - hypothesis.extra.django
+    - hypothesis.extra.pandas
+    - hypothesis.internal
+    - hypothesis.internal.conjecture
+    - hypothesis.internal.conjecture.shrinking
     - hypothesis.strategies
-    - hypothesis.stateful
+    - hypothesis.strategies._internal
+    - hypothesis.utils
+    - hypothesis.vendor
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
