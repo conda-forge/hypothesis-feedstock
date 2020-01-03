@@ -10,16 +10,16 @@ source:
 
 build:
   number: 0
+  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - attrs >=19.2.0
-    - enum34  # [py<34]
     - sortedcontainers >=2.1.0,<3.0.0
 
 test:
