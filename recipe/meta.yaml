@@ -1,4 +1,4 @@
-{% set version = "5.5.4" %}
+{% set version = "5.5.5" %}
 
 package:
   name: hypothesis
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hypothesis/hypothesis-{{ version }}.tar.gz
-  sha256: 2e5382dea626072f12a17c10d2b3c3f13bb7cb35ba40d0978bc29b0ade589b63
+  sha256: e657d61c0d838587bb60b7c14abe5231d61784190eb7174c2339944693176936
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -43,7 +43,7 @@ about:
   home: https://github.com/HypothesisWorks/hypothesis-python
   license: MPL 2.0
   license_file: LICENSE.txt
-  summary: 'A library for property based testing'
+  summary: A library for property based testing
 
 extra:
   recipe-maintainers:
