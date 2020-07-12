@@ -5,7 +5,7 @@ Home: https://github.com/HypothesisWorks/hypothesis-python
 
 Package license: MPL 2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A library for property based testing
 
