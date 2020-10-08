@@ -1,4 +1,4 @@
-{% set version = "5.28.0" %}
+{% set version = "5.29.3" %}
 
 package:
   name: hypothesis
@@ -6,26 +6,33 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hypothesis/hypothesis-{{ version }}.tar.gz
-  sha256: 931b49b1b1e8ddf168f6a3c4999b17f61f739f5331d83578320c3912149d38c0
+  sha256: e6cf92a94a5108d326e45df5a2b256dc0d57f9663d13efdebcadcfbad9accc31
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  entry_points:
+    - hypothesis = hypothesis.extra.cli:main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
+    - python >=3.6
     - attrs >=19.2.0
     - sortedcontainers >=2.1.0,<3.0.0
+    - setuptools
+    # Optional but nice to have
+    - click >=7.0
+    - black >=19.10b0
 
 test:
   requires:
     - django
     - pandas
+    - pip
   imports:
     - hypothesis
     - hypothesis.extra
@@ -38,10 +45,13 @@ test:
     - hypothesis.strategies._internal
     - hypothesis.utils
     - hypothesis.vendor
+  commands:
+    - pip check
+    - hypothesis --help
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
-  license: MPL 2.0
+  license: MPL-2.0
   license_file: LICENSE.txt
   summary: A library for property based testing
 
