@@ -11,21 +11,25 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  entry_points:
+    - hypothesis = hypothesis.extra.cli:main
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
+    - python >=3.6
     - attrs >=19.2.0
     - sortedcontainers >=2.1.0,<3.0.0
+    - setuptools
 
 test:
   requires:
     - django
     - pandas
+    - pip
   imports:
     - hypothesis
     - hypothesis.extra
@@ -38,10 +42,13 @@ test:
     - hypothesis.strategies._internal
     - hypothesis.utils
     - hypothesis.vendor
+  commands:
+    - pip check
+    - hypothesis --help
 
 about:
   home: https://github.com/HypothesisWorks/hypothesis-python
-  license: MPL 2.0
+  license: MPL-2.0
   license_file: LICENSE.txt
   summary: A library for property based testing
 
