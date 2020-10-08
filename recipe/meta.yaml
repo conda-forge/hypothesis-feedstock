@@ -24,6 +24,8 @@ requirements:
     - attrs >=19.2.0
     - sortedcontainers >=2.1.0,<3.0.0
     - setuptools
+    - click >=7.0
+    - black >=19.10b0
 
 test:
   requires:
