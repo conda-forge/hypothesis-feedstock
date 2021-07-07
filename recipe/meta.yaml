@@ -9,7 +9,7 @@ source:
   sha256: 88b0736a5691b68b8e16a4b7ee8e4c8596810c5a20989ea5b5f64870a7c25740
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
@@ -26,7 +26,8 @@ requirements:
     - setuptools
     # Optional but nice to have
     - click >=7.0
-    - black >=19.10b0
+    # black is not supported on pypy because of typed-ast dep
+    # - black >=19.10b0
 
 test:
   requires:
