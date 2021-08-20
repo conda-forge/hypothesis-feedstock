@@ -48,7 +48,7 @@ test:
     - hypothesis.vendor
   commands:
     # re-enable once we have a new django package
-    # - pip check
+    - pip check
     - hypothesis --help
 
 about:
