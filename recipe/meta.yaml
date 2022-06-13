@@ -1,19 +1,20 @@
+{% set name = "hypothesis" %}
 {% set version = "6.47.2" %}
 
 package:
-  name: hypothesis
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/hypothesis/hypothesis-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hypothesis-{{ version }}.tar.gz
   sha256: 9c01a225eada7d74d38430e3e91e659e3a892fbc2b15f7b051779ded6ab73ee7
 
 build:
-  number: 0
   noarch: python
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
@@ -22,12 +23,14 @@ requirements:
   run:
     - python >=3.6
     - attrs >=19.2.0
+    # exceptiongroup is rc still and should be only [py<311] but let's see if we can keep this noarch.
+    - exceptiongroup >=1.0.0rc8
     - sortedcontainers >=2.1.0,<3.0.0
+    # [py<39]
+    - backports.zoneinfo >=0.2.1 
     - setuptools
     # Optional but nice to have
     - click >=7.0
-    # black is not supported on pypy because of typed-ast dep
-    # - black >=19.10b0
 
 test:
   requires:
