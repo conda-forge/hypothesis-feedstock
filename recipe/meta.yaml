@@ -1,5 +1,5 @@
 {% set name = "hypothesis" %}
-{% set version = "6.47.2" %}
+{% set version = "6.47.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hypothesis-{{ version }}.tar.gz
-  sha256: 9c01a225eada7d74d38430e3e91e659e3a892fbc2b15f7b051779ded6ab73ee7
+  sha256: 3c6d99cd7540a64c37d88f86a7509c0ca29cda37a82a957340fba11388dfb9ce
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ requirements:
     - exceptiongroup >=1.0.0rc8
     - sortedcontainers >=2.1.0,<3.0.0
     # [py<39]
-    - backports.zoneinfo >=0.2.1 
+    - backports.zoneinfo >=0.2.1
     - setuptools
     # Optional but nice to have
     - click >=7.0
