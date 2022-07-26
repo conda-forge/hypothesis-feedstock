@@ -40,7 +40,6 @@ test:
   imports:
     - hypothesis
     - hypothesis.extra
-    - hypothesis.extra.django
     - hypothesis.extra.pandas
     - hypothesis.internal
     - hypothesis.internal.conjecture
@@ -50,7 +49,6 @@ test:
     - hypothesis.utils
     - hypothesis.vendor
   commands:
-    # re-enable once we have a new django package
     - pip check
     - hypothesis --help
 
