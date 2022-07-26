@@ -1,5 +1,5 @@
 {% set name = "hypothesis" %}
-{% set version = "6.52.4" %}
+{% set version = "6.53.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hypothesis-{{ version }}.tar.gz
-  sha256: 2af2f03cf49d44e2f8df916d46af6f9a0beeb2ca4c936512a6af0d61f4690772
+  sha256: 39f225530c28fe484a59c39839c8a2fb414f2ecfd4743f75d82f55e0f09268c0
 
 build:
   noarch: python
@@ -40,7 +40,6 @@ test:
   imports:
     - hypothesis
     - hypothesis.extra
-    - hypothesis.extra.django
     - hypothesis.extra.pandas
     - hypothesis.internal
     - hypothesis.internal.conjecture
@@ -50,7 +49,6 @@ test:
     - hypothesis.utils
     - hypothesis.vendor
   commands:
-    # re-enable once we have a new django package
     - pip check
     - hypothesis --help
 
