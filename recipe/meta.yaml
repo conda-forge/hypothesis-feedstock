@@ -14,7 +14,7 @@ build:
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,7 +24,8 @@ requirements:
     - python >=3.6
     - attrs >=19.2.0
     # exceptiongroup is rc still and should be only [py<311] but let's see if we can keep this noarch.
-    - exceptiongroup >=1.0.0rc8
+    # removed until a non-rc build is available due to https://github.com/conda-forge/hypothesis-feedstock/issues/730
+    # - exceptiongroup >=1.0.0rc8
     - sortedcontainers >=2.1.0,<3.0.0
     # [py<39]
     - backports.zoneinfo >=0.2.1
