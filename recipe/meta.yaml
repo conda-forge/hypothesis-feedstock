@@ -14,7 +14,7 @@ build:
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -26,8 +26,7 @@ requirements:
     # exceptiongroup is rc still and should be only [py<311] but let's see if we can keep this noarch.
     - exceptiongroup >=1.0.0rc8
     - sortedcontainers >=2.1.0,<3.0.0
-    # [py<39]
-    - backports.zoneinfo >=0.2.1
+    - backports.zoneinfo >=0.2.1  # [py<39]
     - setuptools
     # Optional but nice to have
     - click >=7.0
