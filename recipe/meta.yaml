@@ -10,7 +10,6 @@ source:
   sha256: 2d5e2d5ccd0efce4e0968a6164f4e4853f808e33f4d91490c975c98beec0c7c3
 
 build:
-  noarch: python
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -18,10 +17,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
   run:
-    - python >=3.6
+    - python
     - attrs >=19.2.0
     # exceptiongroup is rc still and should be only [py<311] but let's see if we can keep this noarch.
     - exceptiongroup >=1.0.0rc8
