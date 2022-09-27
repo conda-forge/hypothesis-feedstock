@@ -50,7 +50,8 @@ test:
     - hypothesis.utils
     - hypothesis.vendor
   commands:
-    - pip check
+    # Skip on Windows and py37 as django has a missing dependency there
+    - pip check  # [win and py<38]
     - hypothesis --help
 
 about:
