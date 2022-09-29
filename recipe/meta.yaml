@@ -38,6 +38,7 @@ requirements:
 test:
   requires:
     - django
+    - tzdata
     - pandas
     - pip
   imports:
