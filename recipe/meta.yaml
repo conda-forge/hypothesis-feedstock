@@ -13,7 +13,7 @@ build:
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -53,7 +53,7 @@ test:
     - hypothesis.vendor
   commands:
     # Skip on Windows and py37 as django has a missing dependency there
-    - pip check  # [not (win and py<38)]
+    - pip check  # [not win]
     - hypothesis --help
 
 about:
