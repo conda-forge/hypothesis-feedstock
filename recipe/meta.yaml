@@ -38,12 +38,13 @@ requirements:
 test:
   requires:
     - django
-    - pandas
+    # Break circular test dependency while bootstrapping Python 3.11 (see also hypothesis.extra.pandas)
+    - pandas  # [py<311]
     - pip
   imports:
     - hypothesis
     - hypothesis.extra
-    - hypothesis.extra.pandas
+    - hypothesis.extra.pandas  # [py<311]
     - hypothesis.internal
     - hypothesis.internal.conjecture
     - hypothesis.internal.conjecture.shrinking
