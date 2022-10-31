@@ -13,24 +13,24 @@ build:
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
+  noarch: python
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.8
     - pip
   run:
-    - python
+    - python >=3.8
     - attrs >=19.2.0
     # exceptiongroup is rc still and should be only [py<311] but let's see if we can keep this noarch.
     - exceptiongroup >=1.0.0rc8
+    # same for backports.zoneinfo for [py<39]
+    - backports.zoneinfo >=0.2.1
     - sortedcontainers >=2.1.0,<3.0.0
-    - backports.zoneinfo >=0.2.1  # [py<39]
     - setuptools
     # Optional but nice to have
     - click >=7.0
@@ -38,13 +38,12 @@ requirements:
 test:
   requires:
     - django
-    # Break circular test dependency while bootstrapping Python 3.11 (see also hypothesis.extra.pandas)
-    - pandas  # [py<311]
+    - pandas
     - pip
   imports:
     - hypothesis
     - hypothesis.extra
-    - hypothesis.extra.pandas  # [py<311]
+    - hypothesis.extra.pandas
     - hypothesis.internal
     - hypothesis.internal.conjecture
     - hypothesis.internal.conjecture.shrinking
@@ -53,8 +52,7 @@ test:
     - hypothesis.utils
     - hypothesis.vendor
   commands:
-    # Skip on Windows and py37 as django has a missing dependency there
-    - pip check  # [not win]
+    - pip check
     - hypothesis --help
 
 about:
