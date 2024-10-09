@@ -1,5 +1,5 @@
 {% set name = "hypothesis" %}
-{% set version = "6.112.5" %}
+{% set version = "6.113.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hypothesis-{{ version }}.tar.gz
-  sha256: e6b7c8ba1126e07cfbf76b8bb544cedd89cb7f7bcf6c315bd759cd2efc2063ff
+  sha256: 5556ac66fdf72a4ccd5d237810f7cf6bdcd00534a4485015ef881af26e20f7c7
 
 build:
   entry_points:
@@ -22,6 +22,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python >=3.8
+    - setuptools
     - pip
   run:
     - python >=3.8
