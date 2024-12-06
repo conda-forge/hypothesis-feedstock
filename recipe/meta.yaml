@@ -12,7 +12,7 @@ source:
 build:
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
   noarch: python
 
@@ -27,10 +27,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - attrs >=19.2.0
-    # exceptiongroup is rc still and should be only [py<311] but let's see if we can keep this noarch.
-    - exceptiongroup >=1.0.0rc8
-    # same for backports.zoneinfo for [py<39]
-    - backports.zoneinfo >=0.2.1
+    - exceptiongroup >=1.0.0
     - sortedcontainers >=2.1.0,<3.0.0
     - setuptools
     # Optional but nice to have
