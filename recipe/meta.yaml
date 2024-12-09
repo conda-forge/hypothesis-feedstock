@@ -1,5 +1,5 @@
 {% set name = "hypothesis" %}
-{% set version = "6.122.1" %}
+{% set version = "6.122.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypothesis-{{ version }}.tar.gz
-  sha256: 23280e802eef88316b02cb32205d74b5bf2e3de4a378e2579a8974117c512b83
+  sha256: f4c927ce0ec739fa6266e4572949d0b54e24a14601a2bc5fec8f78e16af57918
 
 build:
   entry_points:
     - hypothesis = hypothesis.extra.cli:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   noarch: python
 
 requirements:
@@ -26,7 +26,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - attrs >=19.2.0
+    - attrs >=22.2.0
     - exceptiongroup >=1.0.0
     - sortedcontainers >=2.1.0,<3.0.0
     - setuptools
