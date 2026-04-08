@@ -1,5 +1,5 @@
 {% set name = "hypothesis" %}
-{% set version = "6.151.11" %}
+{% set version = "6.151.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hypothesis-{{ version }}.tar.gz
-  sha256: f33dcb68b62c7b07c9ac49664989be898fa8ce57583f0dc080259a197c6c7ff1
+  sha256: be485f503979af4c3dfa19e3fc2b967d0458e7f8c4e28128d7e215e0a55102e0
 
 build:
   entry_points:
