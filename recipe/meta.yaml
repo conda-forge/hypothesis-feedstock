@@ -1,13 +1,13 @@
 {% set name = "hypothesis" %}
-{% set version = "6.152.7" %}
+{% set version = "6.152.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/91/dd/19d273652eb20dac15f32bbc484f2f6d51ccd8fe51fdb27da3f85f9017e8/hypothesis-{{ version }}.tar.gz
-  sha256: 741dedcede2ae0f32c32929a5992804b61f2b0400403b6a51a881a2b58482782
+  url: https://files.pythonhosted.org/packages/ac/81/9260841df522f923a1c9b5879f2192e237db22e68d3594939866a97f1120/hypothesis-{{ version }}.tar.gz
+  sha256: 9c0dd56c6ce5649ef3289555ae9fec40663401cf7134a99f926acf1b91fb6d9f
 
 build:
   entry_points:
