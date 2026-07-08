@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  version: "6.156.3"
+
+package:
+  name: hypothesis
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/h/hypothesis/hypothesis-${{ version }}.tar.gz
+  sha256: 0c68209d611a17d9092a74d4a7c945256b8c7288e4e2b8a8a3c3be716a284365
+
+build:
+  number: 0
+  skip: match(python, "<3.10")
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - hypothesis = hypothesis.extra.cli:main
+
+requirements:
+  build:
+    - cargo-bundle-licenses
+    - ${{ compiler("c") }}
+    - ${{ compiler("rust") }}
+    - ${{ stdlib("c") }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+  host:
+    - python
+    - pip
+    - maturin >=1.7,<2.0
+    # This is a maturin dep.
+    - puccinialin
+  run:
+    - python
+    - exceptiongroup >=1.0.0
+    - sortedcontainers >=2.1.0,<3.0.0
+    # optional
+    - click >=7.0
+
+tests:
+  - python:
+      imports:
+        - hypothesis
+      pip_check: true
+  - requirements:
+      run:
+        - pip
+        - django
+        - pandas
+    script:
+      - hypothesis --help
+
+about:
+  summary: The property-based testing library for Python
+  license: MPL-2.0
+  license_file: LICENSE.txt
+  homepage: https://pypi.org/project/hypothesis/
+
+extra:
+  recipe-maintainers:
+    - ericmjl
+    - jochym
+    - ocefpaf
+    - tadeu
