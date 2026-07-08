@@ -10,8 +10,12 @@ github:
   branch_name: main
   tooling_branch_name: main
 provider:
-  linux_aarch64: default
   linux_ppc64le: default
+  linux_aarch64: github_actions
+  osx_arm64: github_actions
 test: native_and_emulated
 conda_build:
   pkg_format: '2'
+  error_overlinking: true
+conda_build_tool: rattler-build
+conda_install_tool: pixi
