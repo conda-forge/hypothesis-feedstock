@@ -51,6 +51,7 @@ tests:
         - pip
         - django
         - pandas
+        - click
     script:
       - hypothesis --help
 
