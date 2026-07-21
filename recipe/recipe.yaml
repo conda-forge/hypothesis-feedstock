@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 6.157.1
+  version: 6.157.2
 
 package:
   name: hypothesis
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/h/hypothesis/hypothesis-${{ version }}.tar.gz
-  sha256: b238d4a9cd9c25638b3c2de872a3056301aefac871c5d2affe907738849fb99c
+  sha256: cd4f523e55182136bf25481bb10a1493bffb71816583ec46453fadaf12af450f
 
 build:
   number: 0
@@ -41,9 +41,6 @@ requirements:
     - python
     - exceptiongroup >=1.0.0
     - sortedcontainers >=2.1.0,<3.0.0
-    # optional
-    - click >=7.0
-
 tests:
   - python:
       imports:
