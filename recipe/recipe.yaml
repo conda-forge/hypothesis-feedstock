@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "6.164.0"
+  version: "6.165.0"
 
 package:
   name: hypothesis
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/h/hypothesis/hypothesis-${{ version }}.tar.gz
-  sha256: 5d63d263d8c71b571638c18d9591f6e34b836c60a12469e9d9105c1c785f00f1
+  sha256: b54e86cb1d7d049eb934e7843f179889252263b24290ebd38549466c9c9351d9
 
 build:
   number: 0
