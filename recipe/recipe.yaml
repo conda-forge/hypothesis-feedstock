@@ -49,8 +49,10 @@ tests:
       run:
         - pip
         - django
-        - pandas
         - click
+        # break bootstrapping cycle
+        - if: match(python, "<3.15")
+          then: pandas
     script:
       - hypothesis --help
 
