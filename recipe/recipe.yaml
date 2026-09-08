@@ -22,6 +22,7 @@ build:
       CARGO_PROFILE_RELEASE_LTO: fat
       CARGO_PROFILE_RELEASE_STRIP: symbols
       CARGO: cargo-auditable-wrapper${{ ".bat" if win }}
+      MATURIN_PEP517_ARGS: --features pyo3/abi3
     content:
       - if: win
         then:
@@ -30,6 +31,7 @@ build:
           - cp "${RECIPE_DIR}/cargo-auditable-wrapper.sh" "${BUILD_PREFIX}/bin/cargo-auditable-wrapper"
           - chmod 755 "${BUILD_PREFIX}/bin/cargo-auditable-wrapper"
       - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+      - cd rust
       - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
   python:
     version_independent: ${{ is_abi3 }}
@@ -63,33 +65,42 @@ tests:
   - if: is_abi3
     then:
       - python:
-          imports: hypothesis
+          imports:
+            - hypothesis
+            - hypothesis._native
           pip_check: true
           python_version:
             - ${{ python_min }}.*
             - "*"
     else:
       - python:
-          imports: hypothesis
+          imports:
+            - hypothesis
+            - hypothesis._native
           pip_check: true
   - requirements:
       run:
         - click
+        - pytest
+        - if: is_abi3
+          then:
+            - python ${{ python_min }}.*
+            - abi3audit
     script:
       - hypothesis --help
       - hypothesis --version
       - hypothesis --version | ${{ "grep -iE" if unix else "findstr /c" }} "${{ version | replace('.', '\\.') }}"
       - if: is_abi3
         then:
-          - cd "${{ '$SP_DIR' if unix else '%SP_DIR%' }}/hypothesis
-          - abi3audit -s -v --assume-minimum-abi3 ${{ python_min }} native.${{ 'abi3.so' if unix else 'pyd' }}
+          - cd "${{ '$SP_DIR' if unix else '%SP_DIR%' }}/hypothesis"
+          - abi3audit -s -v --assume-minimum-abi3 ${{ python_min }} _native.${{ 'abi3.so' if unix else 'pyd' }}
 
 about:
   summary: The property-based testing library for Python
   license: MPL-2.0
   license_file:
     - LICENSE.txt
-    - THIRDPARTY.yml
+    - rust/THIRDPARTY.yml
   homepage: https://pypi.org/project/hypothesis
   repository: https://github.com/HypothesisWorks/hypothesis
   documentation: https://hypothesis.readthedocs.io
