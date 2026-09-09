@@ -2,9 +2,9 @@
 schema_version: 1
 
 context:
-  version: "6.167.1"
-  maturin_min: "1.9.4"
-  maturin_max: "2.0"
+  version: 6.168.0
+  maturin_min: 1.9.4
+  maturin_max: '2.0'
 
 package:
   name: hypothesis
@@ -12,10 +12,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/h/hypothesis/hypothesis-${{ version }}.tar.gz
-  sha256: 62eefcb4d2791423626e9901c3027a6e0c5ffda2ac0b44b3c7e797ab9d2d5a4c
+  sha256: 72af51087b7b5ab21c49f0d502f803c20897678652835596bd2a8b169a39135e
 
 build:
-  number: 1
+  number: 0
   skip: is_abi3 and not is_python_min
   script:
     env:
@@ -61,6 +61,7 @@ requirements:
   run:
     - python
     - sortedcontainers >=2.1.0,<3.0.0
+    - exceptiongroup >=1.0.0
 tests:
   - if: is_abi3
     then:
@@ -71,7 +72,7 @@ tests:
           pip_check: true
           python_version:
             - ${{ python_min }}.*
-            - "*"
+            - '*'
     else:
       - python:
           imports:
