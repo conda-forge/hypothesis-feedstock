@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "6.168.2"
+  version: "6.168.3"
   maturin_min: 1.9.4
   maturin_max: '2.0'
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/h/hypothesis/hypothesis-${{ version }}.tar.gz
-  sha256: df61fcada928a3fb3fba4602be5b2d569eb50c36fddae0d2e2a5f51419d0ce9b
+  sha256: a43388f9067678fef6e13bdff325b6cfa6961a590498bb37f7ff31589c83bc75
 
 build:
   number: 0
