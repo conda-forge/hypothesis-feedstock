@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "6.168.5"
+  version: 6.169.0
   maturin_min: 1.9.4
   maturin_max: '2.0'
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/h/hypothesis/hypothesis-${{ version }}.tar.gz
-  sha256: 76b9226962fe11d40858253a967eda95bb65811365286317e0118f4ec8f808c7
+  sha256: b65749d7f7a2fddfb106bb57c9902db4ab25ce8724c821f4af50cc58891a6b7b
 
 build:
   number: 0
@@ -61,7 +61,6 @@ requirements:
   run:
     - python
     - sortedcontainers >=2.1.0,<3.0.0
-    - exceptiongroup >=1.0.0
 tests:
   - if: is_abi3
     then:
